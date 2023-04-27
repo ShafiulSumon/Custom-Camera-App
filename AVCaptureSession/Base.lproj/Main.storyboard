@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wk8-GI-b9d">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My CameraVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MyCameraVC" customModule="AVCaptureSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Camera" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcq-6j-0Vq">
+                                <rect key="frame" x="20" y="123.00000000000001" width="353" height="27.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPh-uL-Ave">
+                                <rect key="frame" x="16" y="166.66666666666669" width="361" height="559.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUL-jy-PH7">
+                                <rect key="frame" x="166.66666666666666" y="742" width="60" height="60"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Xxq-4q-4aE"/>
+                                    <constraint firstAttribute="width" constant="60" id="vFp-wZ-HSQ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="camera" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="TakePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RNb-4e-QZn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="Gcq-6j-0Vq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6QP-aL-DJC"/>
+                            <constraint firstItem="Gcq-6j-0Vq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="BRB-OX-ceZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gcq-6j-0Vq" secondAttribute="trailing" constant="20" id="MP2-5G-vec"/>
+                            <constraint firstItem="sUL-jy-PH7" firstAttribute="top" secondItem="bPh-uL-Ave" secondAttribute="bottom" constant="16" id="Qj5-tG-d9N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bPh-uL-Ave" secondAttribute="trailing" constant="16" id="UmF-Pl-njM"/>
+                            <constraint firstItem="sUL-jy-PH7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b40-Us-mGA"/>
+                            <constraint firstItem="bPh-uL-Ave" firstAttribute="top" secondItem="Gcq-6j-0Vq" secondAttribute="bottom" constant="16" id="cu2-RK-O09"/>
+                            <constraint firstItem="bPh-uL-Ave" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="iVY-Ax-zkr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sUL-jy-PH7" secondAttribute="bottom" constant="16" id="iwh-Gg-xrf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="caG-0M-jid"/>
+                    <connections>
+                        <outlet property="CameraPreview" destination="bPh-uL-Ave" id="sXf-cz-3RG"/>
+                        <outlet property="TakePictureOutlet" destination="sUL-jy-PH7" id="7pO-GE-YwO"/>
+                        <segue destination="FFc-a8-f9n" kind="show" identifier="gotoDetails" id="WeY-iT-h6Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
+        </scene>
+        <!--TestVC-->
+        <scene sceneID="bJ4-fa-a4I">
+            <objects>
+                <viewController id="wk8-GI-b9d" customClass="TestVC" customModule="AVCaptureSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uad-0j-GH5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeR-wh-Ljm">
+                                <rect key="frame" x="16" y="75" width="361" height="27.666666666666671"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3s-22-LrI">
+                                <rect key="frame" x="16" y="111" width="361" height="488"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="agq-rE-it2">
+                                <rect key="frame" x="164" y="607" width="213" height="211"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDb-JG-caj">
+                                <rect key="frame" x="16" y="607" width="140" height="211"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Take Photo"/>
+                                <connections>
+                                    <action selector="didTakePhoto:" destination="wk8-GI-b9d" eventType="touchUpInside" id="MRB-YB-4w8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kCY-mH-FLr"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="kCY-mH-FLr" firstAttribute="trailing" secondItem="PeR-wh-Ljm" secondAttribute="trailing" constant="16" id="4tK-Vo-2Sh"/>
+                            <constraint firstItem="PeR-wh-Ljm" firstAttribute="top" secondItem="kCY-mH-FLr" secondAttribute="top" constant="16" id="h2x-DA-MOT"/>
+                            <constraint firstItem="PeR-wh-Ljm" firstAttribute="leading" secondItem="kCY-mH-FLr" secondAttribute="leading" constant="16" id="kAF-Pr-rxt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captureImageView" destination="agq-rE-it2" id="aJN-Ms-C8W"/>
+                        <outlet property="previewView" destination="d3s-22-LrI" id="JLx-OA-sNY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FZj-F0-bDY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="803.81679389312978" y="788.73239436619724"/>
+        </scene>
+        <!--DetailsVC-->
+        <scene sceneID="0Vx-6L-Hex">
+            <objects>
+                <viewController id="FFc-a8-f9n" customClass="DetailsVC" customModule="AVCaptureSession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nGb-lP-TNh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u0X-y0-qrj">
+                                <rect key="frame" x="16" y="119" width="361" height="669"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwZ-KB-Ar3">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="669"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="lwZ-KB-Ar3" secondAttribute="bottom" id="9JW-w6-EqC"/>
+                                    <constraint firstAttribute="trailing" secondItem="lwZ-KB-Ar3" secondAttribute="trailing" id="Ve2-jH-HsD"/>
+                                    <constraint firstItem="lwZ-KB-Ar3" firstAttribute="leading" secondItem="u0X-y0-qrj" secondAttribute="leading" id="plc-oS-QDg"/>
+                                    <constraint firstItem="lwZ-KB-Ar3" firstAttribute="top" secondItem="u0X-y0-qrj" secondAttribute="top" id="yfW-9i-Wes"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ECa-T0-Ugq"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="u0X-y0-qrj" firstAttribute="leading" secondItem="ECa-T0-Ugq" secondAttribute="leading" constant="16" id="F3R-Ow-mUT"/>
+                            <constraint firstItem="ECa-T0-Ugq" firstAttribute="trailing" secondItem="u0X-y0-qrj" secondAttribute="trailing" constant="16" id="Faw-Hz-K51"/>
+                            <constraint firstItem="u0X-y0-qrj" firstAttribute="top" secondItem="ECa-T0-Ugq" secondAttribute="top" constant="16" id="Gaz-bB-1I1"/>
+                            <constraint firstItem="ECa-T0-Ugq" firstAttribute="bottom" secondItem="u0X-y0-qrj" secondAttribute="bottom" constant="30" id="dnb-b1-BfV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KmT-wc-wU3"/>
+                    <connections>
+                        <outlet property="showPicture" destination="lwZ-KB-Ar3" id="xHd-dU-MVi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZ2-if-dq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2002.2900763358778" y="-27.464788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y8n-Kg-umZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q2L-4j-lZj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hch-uh-0y4">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Dgc-x2-x91"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewT-Z2-AXO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera" catalog="system" width="128" height="93"/>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
